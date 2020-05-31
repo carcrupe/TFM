@@ -6,43 +6,69 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import time
 import pickle
+from PIL import Image
+
 
 # In[ ]:
-st.title('Stroke Predictor')
+st.title('Get to know your heart')
+st.subheader('Set your parameters and click predict')
 
-df = pd.DataFrame({
-  'first column': [1, 2, 3, 4],
-  'second column': [10, 20, 30, 40]
-})
-df
+clf_loaded = pickle.load(open("best.model","rb"))
 
-if st.checkbox('Show dataframe'):
-    chart_data = pd.DataFrame(
-       np.random.randn(20, 3),
-       columns=['a', 'b', 'c'])
+data = pd.read_csv("stroke_data_for_modeling.csv", sep=';')
 
-    st.line_chart(chart_data)
-    
-option = st.sidebar.selectbox(
-    'Which number do you like best?',
-     df['first column'])
+#st.write(data.head(5))
 
-'You selected:', option
+st.sidebar.title('Set parameters')
+
+#Initial paramenters of a healthy patient
+ageInit= 45
+heightInit= 165
+weightInit= 65
+sPressureInit= 120
+dPressureInit= 80
+cholesterolInit= 1
 
 
+age = st.sidebar.number_input('Age', value=ageInit)
 
-'Starting a long computation...'
+sexDict = {'Male':1, 'Female':2}
+sex = st.sidebar.selectbox('Sex', ['Male','Female'])
+sex = sexDict[sex]
 
-# Add a placeholder
-latest_iteration = st.empty()
-bar = st.progress(0)
+height = st.sidebar.number_input('Height (cm)', value=heightInit)
 
-for i in range(100):
-  # Update the progress bar with each iteration.
-  latest_iteration.text(f'Iteration {i+1}')
-  bar.progress(i + 1)
-  time.sleep(0.1)
+weight = st.sidebar.number_input('Weight (Kg)', value=weightInit)
 
-'...and now we\'re done!'
+sPressure = st.sidebar.number_input('Systolic Pressure',value=sPressureInit)
+
+dPressure = st.sidebar.number_input('Diastolic Pressure',value=dPressureInit)
+
+cholesterol = st.sidebar.number_input('Cholresterol 1 = low, 2 = high, 3 = very high', value=cholesterolInit)
+
+diabetes = st.sidebar.checkbox('Diabetes')
+
+smoker = st.sidebar.checkbox('Smoker')
+
+alcoholic = st.sidebar.checkbox('Alcoholic')
+
+sport = st.sidebar.checkbox('Active Sport')
+
+
+inputData = [age, sex, height, weight, sPressure,
+       dPressure, cholesterol, diabetes, smoker, alcoholic,
+       sport]
+
+#image = Image.open('safeHeart.png')
+#imageLocation = st.empty()
+#imageLocation.image(image)
+
+if st.button('Predict'):
+    pred = clf_loaded.predict([inputData])
+    if(pred == 0):
+        'You are safe!'
+    else:
+        'You should see the doctor for further tests'
+#        imageLocation.image(image)
+
