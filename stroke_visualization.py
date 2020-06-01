@@ -7,12 +7,12 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
-from PIL import Image
+#from PIL import Image
 
 
 # In[ ]:
 st.title('Get to know your heart')
-st.subheader('Set your parameters and click predict')
+st.subheader('Predict your heart status')
 
 clf_loaded = pickle.load(open("best.model","rb"))
 
@@ -45,7 +45,9 @@ sPressure = st.sidebar.number_input('Systolic Pressure',value=sPressureInit)
 
 dPressure = st.sidebar.number_input('Diastolic Pressure',value=dPressureInit)
 
-cholesterol = st.sidebar.number_input('Cholresterol 1 = low, 2 = high, 3 = very high', value=cholesterolInit)
+cholesterolDict = {'Low: <200 mg/dL':1, 'High: 200-240 mg/dL':2, 'Very high: >240 mg/dL':3}
+cholesterol = st.sidebar.selectbox('Cholresterol', ['Low: <200 mg/dL', 'High: 200-240 mg/dL', 'Very high: >240 mg/dL'])
+cholesterol = cholesterolDict[cholesterol]
 
 diabetes = st.sidebar.checkbox('Diabetes')
 
@@ -65,10 +67,21 @@ inputData = [age, sex, height, weight, sPressure,
 #imageLocation.image(image)
 
 if st.button('Predict'):
+
     pred = clf_loaded.predict([inputData])
     if(pred == 0):
-        'You are safe!'
+        'Your heart is safe!'
     else:
-        'You should see the doctor for further tests'
+        'Your should take care of your heart, go see the doctor for further tests'
 #        imageLocation.image(image)
 
+
+st.title('Donate your heart')
+st.subheader('Help us improve the predictor')
+
+st.write('Your data is really appreciated. Sending your parameters, you improve stroke predictions and save lives.') 
+previousStroke = st.checkbox('Does your data correspond to a stroke episode?')
+if st.button('Donate'):
+    inputData.append(previousStroke)
+    st.write([inputData])
+    
