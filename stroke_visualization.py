@@ -9,20 +9,15 @@ import pandas as pd
 import pickle
 #from PIL import Image
 
-
 # In[ ]:
 st.title('Get to know your heart')
 st.subheader('Predict your heart status')
 
 clf_loaded = pickle.load(open("best.model","rb"))
 
-data = pd.read_csv("stroke_data_for_modeling.csv", sep=';')
-
-#st.write(data.head(5))
-
 st.sidebar.title('Set parameters')
 
-#Initial paramenters of a healthy patient
+#Default paramenters of a healthy patient
 ageInit= 45
 heightInit= 165
 weightInit= 65
@@ -61,10 +56,15 @@ sport = st.sidebar.checkbox('Active Sport')
 inputData = [age, sex, height, weight, sPressure,
        dPressure, cholesterol, diabetes, smoker, alcoholic,
        sport]
+columns=['Age','Sex','Height','Weight','SystolicPressure',
+'DiastolicPressure','Diabetes','Cholesterol','Smoker','Alcoholic',
+'ActiveSport','Target']
 
-#image = Image.open('safeHeart.png')
-#imageLocation = st.empty()
-#imageLocation.image(image)
+data_original = pd.read_csv("stroke_data_for_modeling.csv", sep=';', usecols=columns)
+
+donated_data= data_original
+
+donated_data.to_csv('donated_data.csv', sep=',')
 
 if st.button('Predict'):
 
@@ -75,13 +75,26 @@ if st.button('Predict'):
         'Your should take care of your heart, go see the doctor for further tests'
 #        imageLocation.image(image)
 
-
 st.title('Donate your heart')
 st.subheader('Help us improve the predictor')
 
 st.write('Your data is really appreciated. Sending your parameters, you improve stroke predictions and save lives.') 
-previousStroke = st.checkbox('Does your data correspond to a stroke episode?')
+
+
+previousStroke = st.checkbox('Did you have a stroke episode with these data?')
+
+#if the user selects the previousstroke checkbox, the target is set to 1. The donated data would be related to a stroke event.
 if st.button('Donate'):
+
     inputData.append(previousStroke)
-    st.write([inputData])
+    st.write(len(inputData))
+    donated_data = pd.read_csv('donated_data.csv',sep=',', usecols=columns)
+
+    donated_data.loc[len(donated_data)]= inputData
+    donated_data.loc[len(donated_data)+1]= inputData
+    st.write(len(donated_data))
+    donated_data.to_csv('donated_data.csv', sep=',')
+    st.write(donated_data.tail(5))
+
     
+
