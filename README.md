@@ -14,8 +14,14 @@ In this project I have worked to answer the following question:
 
 ## Data description
 
-will explain the different files and show how to run the heart prediction user interface, which uses a classification model to predict strokes:
+[Stroke data](https://www.kaggle.com/sulianova/cardiovascular-disease-dataset)</br>
+In the dataset almost a million patients will be explored and analyzed based on the following features: age, sex,	height, weight, systolic pressure, diastolic pressure, cholesterol, diabetes, smoker, alcoholic, active sport. There target will be weather the patient suffered a stroke episode or not.
 
+As we can see, we have two types of features, categorical and continuous, which will help predict the target, training a classification model.
+
+I have done a explratory analyisis of the data and found out that parameters such as systolic pressure, dyastilic pressure or choleterol have different distribution depending on the target. This will make these features important predictors. Also, I confirmed that the number of strokes increases with the age, which is something we could expect.
+
+Additionaly, I run the correlation between all features and saw that none of them is really correlated to each other. Therefore, I have included all features in the training model.
 
 ## Methodology
 machine learning techniques used, statistical methodologies
