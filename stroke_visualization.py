@@ -8,7 +8,7 @@ import pickle
 st.title('Get to know your heart')
 st.subheader('Predict your heart status')
 
-clf_loaded = pickle.load(open("best.model","rb"))
+clf_loaded = pickle.load(open("notebooks_models/best.model","rb"))
 
 st.sidebar.title('Set parameters')
 
