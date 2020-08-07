@@ -2,20 +2,20 @@
 
 ## Introduction
 
-Nowadays cardiovascular diseases are the leading cause of death globally. In particular, [isquemic heart or stroke](https://ourworldindata.org/causes-of-death#what-do-people-die-from) remained the leading causes of death globally in the last 15 years. In addition, it is very hard to anticipate a stroke episode and usually when it is detected, it is too late for a treatment, resulting in severe problems or death.
+Nowadays cardiovascular diseases are the leading cause of death globally. In particular, [isquemic heart or stroke](https://ourworldindata.org/causes-of-death#what-do-people-die-from) have led the ranking in the last 15 years. In addition, it is very hard to anticipate a stroke episode and usually when it is detected, it is too late for a treatment, resulting in severe problems or death.
 
 To anticipate a stroke in advance, heart electrophysiological indicators or arrythmia information might be very useful. For example, a very good indicator could be to diagnose the patient with [atrial fibrilation](https://www.cdc.gov/heartdisease/atrial_fibrillation.htm), since it is the most common arrythmia and seems to be related to a stroke over time. However, to detect and treat these kind of arrythmias one needs an experienced specialist and dedicated technology, which unfortunately, cannot be guaranteed for this really demanding disease. 
 
-Here is where data plays a very important role and offers a very good opportunity to better understand and predict strokes. This would be a realy big step in the healthcare world, allowing anticipated patient treatments and saving an uncountable amount of lives.
+Here is where data plays a very important role and offers a really good opportunity to better understand and predict strokes. This would be a huge step in the healthcare world, allowing anticipated patient treatments and saving an uncountable amount of lives.
 
 In this project I have worked to answer the following question and create a binary classification model: 
 
-#### Based on measurable patient paramenters, is this patient going to have a stroke?
+#### Based on measurable patient parameters, is this patient likely to suffer a stroke?
 
 ## Data description
 
 [Stroke data](https://www.kaggle.com/sulianova/cardiovascular-disease-dataset)</br>
-In the dataset almost 70.000 patients will be explored and analyzed based on the following features: age, sex,	height, weight, systolic pressure, diastolic pressure, cholesterol, diabetes, smoker, alcoholic, active sport. The target will be weather the patient suffered a stroke episode or not.
+In the dataset almost 70.000 patients will be explored and analyzed based on the following features: age, sex,	height, weight, systolic pressure, diastolic pressure, cholesterol, diabetes, and habits like smoke, alcohol or sport. The target will be weather the patient suffered a stroke episode or not.
 
 As we can see, we have two types of features, categorical and continuous, which will help predict the target.
 
