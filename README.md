@@ -71,13 +71,24 @@ The steps I followed for training and evaluating each model are:
 8. Finally, select the model with the highest recall and performance. In my case it is the Random Forest model.
 
 ## Summary of main results
-The most important features to predict a heart stroke are systolic pressure, weigth and cholesterol
+
+The most important features to predict a heart stroke are age and systolic pressure. Optimizing the model I have accomplished a recall of around 69%. Despite the fact that the model has been optimized, I have not improved much the performance. This might be the result of poor data quality or simply not enough data to make the model learn properly. Obtaining clinical data is very complicated and unfortunately, I did not have a better dataset to do my research.
 
 ## Conclusions
-Not a summary of the work. The problem was relevant, now with your work, what can you say about how the problem is solved?
 
-## User manual for the frontend
+I have worked to solve a really relevant problem, which nowadays causes the biggest amount of deaths worldwide. Detecting a stroke in advance is obviously not an easy task and it has been in research for many years. With my work, I have learnt how important is to have valuable data to answer a given question. In particular, in this complex problem, I should have included much more information about the patients. This information is very sensitive and private, and therefore, it was very hard for me to obtain the right data. However, for those who have access to cardiovascular databases, I would recommend to include parameters such as sleep time, left/right atrial size, left/right ventricle size, kidney diseases, aorta ejection rate or percetange of oxygenated blood.  With all these parameters in mind, I am sure predictions would be much more accurate, providing precise results and hopefully, providing a tool to get to know your own heart at any time. Again, the challenge here remains in acquiring the right data to do the research.
 
+## Run and use the web app
 
+To finalize the project, I have created a simple web application with Streamlit. The application runs the best trained classifier (Random Forest) and predicts the input that the user sets. There are two ways to run the app:
+
+**Docker File:** I have created a container with all the needed information to install and run the application. The instructions to execute the app are:
+
+- Build the docker image: *sudo docker build -f Dockerfile -t stroke_app .*
+- Run the image: *sudo docker run stroke_app*
+
+*To do this it is assumed you have docker installed in your computer.*
+
+**Streamlit notebook:** From the repository notebook folder download and run the file [stroke_stream.ipynb](https://github.com/carcrupe/TFM/blob/master/notebooks_models/stroke_stream.ipynb). You can run this notebook without previously training the model, it will by default use the pretrained model that I have saved in my repository. To show the app, I create a ngrok tunnel to expose my local server in a dinamically created URL.
 
 
