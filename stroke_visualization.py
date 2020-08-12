@@ -3,7 +3,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pickle
-#from PIL import Image
 
 st.title('Get to know your heart')
 st.subheader('Predict your heart status')
@@ -27,7 +26,7 @@ dPressure = st.sidebar.number_input('Diastolic Pressure',value=dPressureInit)
 pulse = sPressure-dPressure
 
 cholesterolDict = {'Low: <200 mg/dL':1, 'High: 200-240 mg/dL':2, 'Very high: >240 mg/dL':3}
-cholesterol = st.sidebar.selectbox('Cholresterol', ['Low: <200 mg/dL', 'High: 200-240 mg/dL', 'Very high: >240 mg/dL'])
+cholesterol = st.sidebar.selectbox('Cholesterol', ['Low: <200 mg/dL', 'High: 200-240 mg/dL', 'Very high: >240 mg/dL'])
 cholesterol = cholesterolDict[cholesterol]
 
 inputData = [age, sPressure,
@@ -42,4 +41,3 @@ if st.button('Predict'):
         'Your heart is safe!'
     else:
         'Your should take care of your heart, go see the doctor for further tests'
-#        imageLocation.image(image)
