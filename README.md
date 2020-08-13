@@ -90,6 +90,8 @@ Again, the challenge remains in acquiring the right data to do the research.
 
 To finalize the project, I have created a simple web application with [Streamlit](https://www.streamlit.io/). The application runs the best trained classifier (Random Forest) and predicts the input that the user sets. There are two ways to run the app:
 
+**Streamlit notebook:** From the repository notebook folder download and run the file [stroke_stream.ipynb](https://github.com/carcrupe/TFM/blob/master/notebooks_models/stroke_stream.ipynb). You can run this notebook without previously training the model, it will by default use the pretrained model that I have saved in my repository. To show the app, I create a ngrok tunnel to expose my local server in a dinamically created URL.
+
 **Running the docker file:** I have created a docker container with all the needed information to install and run the streamlit application. The instructions to execute the app are:
 
 - In the terminal, navigate to the project folder, which contains the Dockerfile.
@@ -98,6 +100,5 @@ To finalize the project, I have created a simple web application with [Streamlit
 
 *To do this it is assumed you have docker installed in your computer and you have superuser permission.*
 
-**Streamlit notebook:** From the repository notebook folder download and run the file [stroke_stream.ipynb](https://github.com/carcrupe/TFM/blob/master/notebooks_models/stroke_stream.ipynb). You can run this notebook without previously training the model, it will by default use the pretrained model that I have saved in my repository. To show the app, I create a ngrok tunnel to expose my local server in a dinamically created URL.
 
 
