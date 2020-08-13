@@ -92,6 +92,7 @@ To finalize the project, I have created a simple web application with [Streamlit
 
 **Running the docker file:** I have created a docker container with all the needed information to install and run the streamlit application. The instructions to execute the app are:
 
+- In the terminal, navigate to the project folder, which contains the Dockerfile.
 - Build the docker image: *docker build -f Dockerfile -t stroke_app .*
 - Run the image: *docker run stroke_app*
 
