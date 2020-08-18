@@ -96,9 +96,18 @@ To finalize the project, I have created a simple web application with [Streamlit
 
 - In the terminal, navigate to the project folder, which contains the Dockerfile.
 - Build the docker image: *docker build -f Dockerfile -t stroke_app .*
-- Run the image: *docker run stroke_app*
+- Run the image: *docker run -p 8501:8501 stroke_app*
 
 *To do this it is assumed you have docker installed in your computer and you have superuser permission.*
 
+**Deploy the app in the Cloud:** As an alternative, if you do not have Docker installed in your computer or you want to deploy the classifier in the Cloud, you can use Google Cloud, AWS or Azure to do it. In my case, I have used the Compute Engine tool from GCP. Here are the steps for the deployment:
 
+- Within Google Cloud Platform, open the Compute Engine section and create a Virtual Machine.
+- Establish a secure connection with the Virtual Machine by clicking on the SSH button.
+- Once the VM is open, follow the next steps:
+  - Install Git: *sudo apt-get install git*
+  - Clone the project from the git repository: *git clone https://github.com/carcrupe/TFM.git*
+  - Install Docker by running the following commands:  *sudo apt-get install docker* , *sudo curl -sSL https://get.docker.com/ | sh* 
+  - Execute the instrucions detailed in the previous *Running the docker file* section, to deploy the docker container.
+  - The app will be running at the corresponding network URL.
 
