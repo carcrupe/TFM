@@ -6,9 +6,9 @@ Nowadays cardiovascular diseases are the leading cause of death globally. In par
 
 To anticipate a stroke in advance, heart electrophysiological indicators or arrythmia information might be very useful. For example, a very good indicator could be to diagnose the patient with [atrial fibrilation](https://www.cdc.gov/heartdisease/atrial_fibrillation.htm), since it is the most common arrythmia and seems to be related to a stroke over time. However, to detect and treat these kind of arrythmias one needs an experienced specialist and dedicated technology, which unfortunately, cannot be guaranteed for this really demanding disease. 
 
-Here is where data plays a very important role and offers a really good opportunity to better understand and predict strokes. This would be a huge step in the healthcare world, allowing anticipated patient treatments and saving an uncountable amount of lives.
+Here is where data plays a very important role and offers a really good opportunity to better understand and predict strokes. If we had relevant heart related data, we could take a huge step in the healthcare world, allowing anticipated patient treatments and saving an uncountable amount of lives.
 
-In this project I have worked to create a binary classification model and answer the following question:
+In this project, with the data I could obtain for free, I have worked to create a binary classification model and answer the following question:
 
 #### Based on measurable patient parameters, is this patient likely to suffer a stroke?
 
@@ -109,5 +109,5 @@ To finalize the project, I have created a simple web application with [Streamlit
   - Clone the project from the git repository: *git clone https://github.com/carcrupe/TFM.git*
   - Install Docker by running the following commands:  *sudo apt-get install docker* , *sudo curl -sSL https://get.docker.com/ | sh* 
   - Execute the instrucions detailed in the previous *Running the docker file* section, to deploy the docker container.
-  - The app will be running at the corresponding network URL.
+  - The app will be running at the corresponding network URL, allowing every user to predict his/her heart stroke status with the trained classifier.
 
