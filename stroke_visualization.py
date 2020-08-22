@@ -40,4 +40,4 @@ if st.button('Predict'):
     if(pred == 0):
         'Your heart is safe!'
     else:
-        'Your should take care of your heart, go see the doctor for further tests'
+        'Your should take care of your heart, go see a specialist for further tests'
