@@ -22,9 +22,9 @@ As we can see, we have two types of features, categorical and continuous, which 
 
 ## Methodology
 
-[Notebook with EDA of the dataset](https://github.com/carcrupe/TFM/blob/master/notebooks_models/stroke_exploring_data.ipynb)</br>
+[Notebook with EDA of the dataset](https://github.com/carcrupe/TFM/blob/master/notebooks/stroke_exploring_data.ipynb)</br>
 
-I will describe briefly the different steps taken in the notebook. For a further and detailed explanation, please refer to the [notebook](https://github.com/carcrupe/TFM/blob/master/notebooks_models/stroke_exploring_data.ipynb).</br>
+I will describe briefly the different steps taken in the notebook. For a further and detailed explanation, please refer to the [notebook](https://github.com/carcrupe/TFM/blob/master/notebooks/stroke_exploring_data.ipynb).</br>
 
 ### 1. Prepare the notebook with the data and requirements
 
@@ -52,7 +52,7 @@ Eventually, based on the correlation matrix, the [selected features](https://git
 
 ### 5. Machine Learning classifier
 
-[Notebook with Machine Learning models](https://github.com/carcrupe/TFM/blob/master/notebooks_models/stroke_predictor_models.ipynb)</br>
+[Notebook with Machine Learning models](https://github.com/carcrupe/TFM/blob/master/notebooks/stroke_predictor_models.ipynb)</br>
 
 Since my purpose is to predict a binary output (having or not having a stroke), I will be training a few classification models with the selected features. Again, this notebook can be run without any other file or data, all is ready to be installed and downloaded at the begining of the notebook.
 
@@ -90,7 +90,7 @@ Again, the challenge remains in acquiring the right data to do the research.
 
 To finalize the project, I have created a simple web application with [Streamlit](https://www.streamlit.io/). The application runs the best trained classifier (Random Forest) and predicts the input that the user sets. There are two ways to run the app:
 
-**Streamlit notebook:** From the repository notebook folder download and run the file [stroke_stream.ipynb](https://github.com/carcrupe/TFM/blob/master/notebooks_models/stroke_stream.ipynb). You can run this notebook without previously training the model, it will by default use the pretrained model that I have saved in my repository. To show the app, I create a ngrok tunnel to expose my local server in a dinamically created URL.
+**Streamlit notebook:** From the repository notebook folder download and run the file [stroke_stream.ipynb](https://github.com/carcrupe/TFM/blob/master/notebooks/stroke_stream.ipynb). You can run this notebook without previously training the model, it will by default use the pretrained model that I have saved in my repository. To show the app, I create a ngrok tunnel to expose my local server in a dinamically created URL.
 
 **Running the docker file:** I have created a docker container with all the needed information to install and run the streamlit application. The instructions to execute the app are:
 
