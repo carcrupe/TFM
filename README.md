@@ -4,17 +4,17 @@
 - [Introduction](#Introduction)  
 - [Data description](#Data-description)  
 - [Methodology](#Methodology) 
-  * [1. Prepare the notebook with the data and requirements](#prepare-the-notebook-with-the-data-and-requirements)
-  * [2. Data cleaning](#data-cleaning)
-  * [3. Feature extraction](#feature-extraction)
-  * [4. Feature selection](#feature-selection)
-  * [5. Machine Learning modeling](#machine-learning-modeling)  
+  + [1. Prepare the notebook with the data and requirements](#prepare-the-notebook-with-the-data-and-requirements)
+  + [2. Data cleaning](#data-cleaning)
+  + [3. Feature extraction](#feature-extraction)
+  + [4. Feature selection](#feature-selection)
+  + [5. Machine Learning modeling](#machine-learning-modeling)  
 - [Summary of main results](#Summary-of-main-results)  
 - [Conclusions](#Conclusions)  
 - [Deployment - Run and use the web app](#Deployment---Run-and-use-the-web-app)  
-  * [Streamlit notebook](#streamlit-notebook)
-  * [Run app with docker file](#run-app-with-docker-file)
-  * [Deploy the app in the Cloud](#deploy-the-app-in-the-cloud)
+  + [Streamlit notebook](#streamlit-notebook)
+  + [Run app with docker file in Linux](#run-app-with-docker-file)
+  + [Deploy the app in the Cloud](#deploy-the-app-in-the-cloud)
 
 
 
@@ -110,7 +110,7 @@ To finalize the project, I have created a simple web application with [Streamlit
 
 **Streamlit notebook:** From the repository notebook folder download and run the file [stroke_stream.ipynb](https://github.com/carcrupe/TFM/blob/master/notebooks/stroke_stream.ipynb). You can run this notebook without previously training the model, it will by default use the pretrained model that I have saved in my repository. To show the app, I create a ngrok tunnel to expose my local server in a dinamically created URL.
 
-**Run app with docker file:** I have created a docker container with all the needed information to install and run the streamlit application. The instructions to execute the app are:
+**Run app with docker file in Linux:** I have created a docker container with all the needed information to install and run the streamlit application. The instructions to execute the app are:
 
 - In the terminal, navigate to the project folder, which contains the Dockerfile.
 - Build the docker image: *sudo docker build -f Dockerfile -t stroke_app .*
