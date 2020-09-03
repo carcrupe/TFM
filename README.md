@@ -11,7 +11,11 @@
   * [5. Machine Learning modeling](#5.-Machine-Learning-modeling)  
 - [Summary of main results](#Summary-of-main-results)  
 - [Conclusions](#Conclusions)  
-- [Run and use the web app](#Run-and-use-the-web-app)  
+- [Deployment - Run and use the web app](#Deployment---Run-and-use-the-web-app)  
+  * [Streamlit notebook](#Streamlit-notebook)
+  * [Run app with docker file](#Run-app-with-docker-file)
+  * [Deploy the app in the Cloud](#Deploy-the-app-in-the-Cloud)
+
 
 
 ## Introduction
@@ -100,13 +104,13 @@ However, for those who have access to cardiovascular databases, I would recommen
 
 Again, the challenge remains in acquiring the right data to do the research.
 
-## Run and use the web app
+## Deployment - Run and use the web app
 
 To finalize the project, I have created a simple web application with [Streamlit](https://www.streamlit.io/). The application runs the best trained classifier (Random Forest) and predicts the input that the user sets. There are two ways to run the app:
 
 **Streamlit notebook:** From the repository notebook folder download and run the file [stroke_stream.ipynb](https://github.com/carcrupe/TFM/blob/master/notebooks/stroke_stream.ipynb). You can run this notebook without previously training the model, it will by default use the pretrained model that I have saved in my repository. To show the app, I create a ngrok tunnel to expose my local server in a dinamically created URL.
 
-**Running the docker file:** I have created a docker container with all the needed information to install and run the streamlit application. The instructions to execute the app are:
+**Run app with docker file:** I have created a docker container with all the needed information to install and run the streamlit application. The instructions to execute the app are:
 
 - In the terminal, navigate to the project folder, which contains the Dockerfile.
 - Build the docker image: *sudo docker build -f Dockerfile -t stroke_app .*
