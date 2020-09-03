@@ -4,12 +4,11 @@
 - [Introduction](#Introduction)  
 - [Data description](#Data-description)  
 - [Methodology](#Methodology) 
-  * [1. Prepare the notebook with the data and requirements](#1.-Prepare-the-notebook-with-the-data-and-requirements)
-  * [2. Data cleaning](#2.-Data-cleaning)
-  * [3. Feature extraction](#3.-Feature-extraction)
-  * [4. Feature selection](#4.-Feature-selection)
-  * [5. Machine Learning modeling](#5.-Machine-Learning-modeling)  
-
+  * [1. Prepare the notebook with the data and requirements](#Prepare-the-notebook-with-the-data-and-requirements)
+  * [2. Data cleaning](#Data-cleaning)
+  * [3. Feature extraction](#Feature-extraction)
+  * [4. Feature selection](#Feature-selection)
+  * [5. Machine Learning modeling](#Machine-Learning-modeling)  
 - [Summary of main results](#Summary-of-main-results)  
 - [Conclusions](#Conclusions)  
 - [Run and use the web app](#Run-and-use-the-web-app)  
@@ -49,7 +48,7 @@ To provide an easy-to-use notebook, the first cells are to download the appropri
 
 In this section,the first thing is to assess null values and duplicates. Since there are not many I decided to delete these observations, lossing only 5% of the data. 
 
-Moreover, for the continuous features, I have evaluated the outliers. To do that I have written a function that measures the amount of outliers for a given property and calculates Q1, Q3 and the IQR (inter quartile range Q3-Q1). Based on these three parameters I decided to discard, for each feature, all the observations below (Q1 - 1.5 x IQR) and above (Q3 + 1.5 x IQR). I have taken this decision based on the conventional definition of outliers, detailed [here](https://en.wikipedia.org/wiki/Interquartile_range)
+Moreover, for the continuous features, I have evaluated the outliers. To do that I have written a function that measures the amount of outliers for a given property and calculates Q1, Q3 and the IQR (inter quartile range Q3-Q1). Based on these three parameters I decided to discard, for each feature, all the observations below (Q1 - 1.5 x IQR) and above (Q3 + 1.5 x IQR). I have taken this decision based on the conventional definition of outliers, detailed [here](https://en.wikipedia.org/wiki/Interquartile_range).
 
 ### 3. Feature extraction
 
