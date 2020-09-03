@@ -1,5 +1,20 @@
 # Master thesis - Heart Stroke Predictor
 
+## Table of Contents  
+- [Introduction](#Introduction)  
+- [Data description](#Data-description)  
+- [Methodology](#Methodology) 
+  * [1. Prepare the notebook with the data and requirements](#1.-Prepare-the-notebook-with-the-data-and-requirements)
+  * [2. Data cleaning](#2.-Data-cleaning)
+  * [3. Feature extraction](#3.-Feature-extraction)
+  * [4. Feature selection](#4.-Feature-selection)
+  * [5. Machine Learning modeling](#5.-Machine-Learning-modeling)  
+
+- [Summary of main results](#Summary-of-main-results)  
+- [Conclusions](#Conclusions)  
+- [Run and use the web app](#Run-and-use-the-web-app)  
+
+
 ## Introduction
 
 Nowadays cardiovascular diseases are the leading cause of death globally. In particular, [isquemic heart or stroke](https://ourworldindata.org/causes-of-death#what-do-people-die-from) have led the ranking in the last 15 years. In addition, it is very hard to anticipate a stroke episode and usually when it is detected, it is too late for a treatment, resulting in severe problems or death.
@@ -50,7 +65,7 @@ Taking into account this previous explanation, my goal is to select features wit
 
 Eventually, based on the correlation matrix, the [selected features](https://github.com/carcrupe/TFM/blob/master/data/stroke_data_for_modeling.csv) for my model are: Age, SystolicPressure, DiastolicPressure, Cholesterol, Pulse.
 
-### 5. Machine Learning classifier
+### 5. Machine Learning modeling
 
 [Notebook with Machine Learning models](https://github.com/carcrupe/TFM/blob/master/notebooks/stroke_predictor_models.ipynb)</br>
 
